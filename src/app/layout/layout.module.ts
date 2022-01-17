@@ -10,6 +10,7 @@ import { QuariesComponent } from '../pages/quaries/quaries.component';
 import { UserManagementComponent } from '../pages/user-management/user-management.component';
 import { RouterModule } from '@angular/router';
 import { ShareModule } from '../shared/share.module';
+import { PortfolioOverviewComponent } from '../pages/home/portfolio-overview/portfolio-overview.component';
 
 
 
@@ -22,7 +23,8 @@ import { ShareModule } from '../shared/share.module';
     CompaignComponent,
     ProductComponent,
     QuariesComponent,
-    UserManagementComponent
+    UserManagementComponent,
+    PortfolioOverviewComponent,
   ],
   imports: [
     RouterModule,

@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+.cursor{
+    cursor: pointer;
+}
+p{
+    color: #fff;
+}
+body{
+    font-family: 'Open Sans', sans-serif !important;
+    color: white !important;
+}
+.block{
+    padding:20px 30px 0px 30px;
+}

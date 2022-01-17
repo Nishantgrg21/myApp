@@ -1,0 +1,37 @@
+.left-block{
+    display: flex;
+    align-items: center;
+    
+}
+.right-block{
+    display: flex;
+    align-items: center;
+}
+.hr-line{
+    width: 30px;
+    height: 1px;
+    background: #fff;
+}
+.vr-line{
+    width: 2px;
+    height: 40px;
+    background: #df8f01;
+    margin: 0 10px;
+}
+.block-text{
+    color:#df8f01;
+    font-size: 16px;
+}
+.rupees{
+    display: flex;
+    align-items: flex-end;
+}
+.inr-icon{
+    width: 30px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 50%;
+    font-size: 18px;
+    background: #292929;
+}
+

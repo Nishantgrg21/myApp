@@ -1,0 +1,12 @@
+<div class="left-block">
+    <div class="account" (click)="stateName1()"  [@animate1]="animateState1" (click)="accountToAmount = 'By Account'">
+        <i class="fa fa-user-circle"></i>
+    </div>
+    <div class="hr-line"> </div>
+    <div class="rupees" (click)="stateName2()"  [@animate2]="animateState2" (click)="accountToAmount = 'By Amount'">
+        <span class="inr-icon"> ₹</span>
+    </div>
+    <div class="vr-line"> </div>
+    <div class="block-text" > {{accountToAmount}}</div>
+</div>
+<div class="right-block"></div>

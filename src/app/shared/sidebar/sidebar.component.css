@@ -1,0 +1,25 @@
+.navbar-list{
+    color: #fff;
+    font-size: 12px;
+    line-height: 25px;
+    border-left: 5px solid #160c01;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.navbar-list:hover{
+    color: #fff;
+    background: #464343;
+    font-size: 12px;
+    line-height: 25px;
+    border-left: 5px solid #df8f01;
+}
+.navbar-list.active{
+    color: #fff;
+    font-size: 12px;
+    line-height: 25px;
+    border-left: 5px solid #df8f01;
+}
+.bdrnone{
+    border-left:5px solid #160c01!important;
+}
