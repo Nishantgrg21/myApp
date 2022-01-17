@@ -1,0 +1,28 @@
+.box{
+    width: 100%;
+}
+.leftside{
+    float: left;
+    width: 75px;
+    min-height: 100vh;
+    position: fixed;
+    background: #160c01;
+}
+.rightside{
+    float: right;
+    width: calc(100% - 75px);
+    min-height: 100vh;
+    background: #292929;
+}
+.header{
+    height: 72px;
+    border-bottom: 1px solid #141414;
+    background: #292929;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+.content{
+    min-height: calc(100% - 72px);
+    background: #292929;
+}
