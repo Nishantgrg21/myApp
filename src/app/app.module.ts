@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './shared/share.module';
 import { LayoutModule } from './layout/layout.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { LayoutModule } from './layout/layout.module';
     BrowserAnimationsModule,
     ShareModule,
     LayoutModule ,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

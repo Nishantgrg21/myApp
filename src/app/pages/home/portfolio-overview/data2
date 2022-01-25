@@ -1,0 +1,32 @@
+[
+    {
+        "image":"/assets/images/totalAccounts.png",
+        "title":"Total Accounts",
+        "amount":"4,178.60 Cr",
+        "percent":""
+    },
+    {
+        "image":"/assets/images/totalEngagement.png",
+        "title":"Total Engagement",
+        "amount":"3,070.47 Cr",
+        "percent":"73.48 %"
+    },
+    {
+        "image":"/assets/images/totalRegistered.png",
+        "title":"Total Registered",
+        "amount":"1,551.80 Cr",
+        "percent":"50.54 %"
+    },
+    {
+        "image":"/assets/images/digitallyPaid.png",
+        "title":"Digitally Paid",
+        "amount":"297.92 Cr",
+        "percent":"19.20 %"
+    },
+    {
+        "image":"/assets/images/overallResolved.png",
+        "title":"Overall Resolved",
+        "amount":"1,591.31 Cr",
+        "percent":"38.08 %"
+    }
+]

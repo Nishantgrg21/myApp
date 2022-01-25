@@ -11,6 +11,7 @@ import { UserManagementComponent } from '../pages/user-management/user-managemen
 import { RouterModule } from '@angular/router';
 import { ShareModule } from '../shared/share.module';
 import { PortfolioOverviewComponent } from '../pages/home/portfolio-overview/portfolio-overview.component';
+import { AngularmaterialModule } from '../angularmaterial/angularmaterial.module';
 
 
 
@@ -29,7 +30,7 @@ import { PortfolioOverviewComponent } from '../pages/home/portfolio-overview/por
   imports: [
     RouterModule,
     CommonModule,
-    ShareModule
+    ShareModule,AngularmaterialModule
   ],
   exports:[
     LayoutComponent

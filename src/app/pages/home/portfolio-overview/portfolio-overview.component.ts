@@ -1,5 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-portfolio-overview',
@@ -58,9 +60,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioOverviewComponent implements OnInit {
   accountToAmount:any = "By Account";
+  toppings = new FormControl();
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
+  constructor(public dialog: MatDialog) {}
 
-  constructor() { }
+  openDialog() {
+    const dialogRef = this.dialog.open(ExportMasterReportDialog,{
+      height: '430px',
+      width: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   
  
   animateState2:string='initial';
@@ -94,16 +108,22 @@ export class PortfolioOverviewComponent implements OnInit {
 
   }
 
- 
-  displayStyle = "none";
 
-  openPopup() {
-    this.displayStyle = "block";
+}
+
+
+// Modal Component Start
+@Component({
+  selector: 'export-master-report-dialog',
+  templateUrl: 'export-master-report-dialog.html',
+  styleUrls: ['export-master-report-dialog.css'],
+})
+export class ExportMasterReportDialog {
+  constructor(
+    public dialogRef: MatDialogRef<ExportMasterReportDialog>
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
-  closePopup() {
-    this.displayStyle = "none";
-  }
-
-  
-
 }

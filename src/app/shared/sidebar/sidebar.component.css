@@ -1,9 +1,9 @@
 .navbar-list{
     color: #fff;
     font-size: 12px;
-    line-height: 25px;
+    /* line-height: 25px; */
     border-left: 5px solid #160c01;
-    text-align: center;
+    text-align: center;    padding: 5px;
     margin: 30px 0px;
 }
 
@@ -11,13 +11,13 @@
     color: #fff;
     background: #464343;
     font-size: 12px;
-    line-height: 25px;
+    /* line-height: 25px; */    padding: 5px;
     border-left: 5px solid #df8f01;
 }
 .navbar-list.active{
     color: #fff;
     font-size: 12px;
-    line-height: 25px;
+    /* line-height: 25px; */    padding: 5px;
     border-left: 5px solid #df8f01;
 }
 .bdrnone{

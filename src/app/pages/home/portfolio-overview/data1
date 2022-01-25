@@ -1,0 +1,32 @@
+[
+    {
+        "image":"/assets/images/totalAccounts.png",
+        "title":"Total Accounts",
+        "amount":"9.84 Lac",
+        "percent":""
+    },
+    {
+        "image":"/assets/images/totalEngagement.png",
+        "title":"Total Engagement",
+        "amount":"7.14 Lac",
+        "percent":"72.50 %"
+    },
+    {
+        "image":"/assets/images/totalRegistered.png",
+        "title":"Total Registered",
+        "amount":"3.37 Lac",
+        "percent":"47.17 %"
+    },
+    {
+        "image":"/assets/images/digitallyPaid.png",
+        "title":"Digitally Paid",
+        "amount":"74.99 Lac",
+        "percent":"22.27 %"
+    },
+    {
+        "image":"/assets/images/overallResolved.png",
+        "title":"Overall Resolved",
+        "amount":"4.35 Lac ",
+        "percent":"44.21 %"
+    }
+]

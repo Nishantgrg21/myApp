@@ -35,7 +35,7 @@ const routes: Routes = [
         component:ProductComponent
       },
       {
-        path:'quaries',
+        path:'queries',
         component:QuariesComponent
       },
       {

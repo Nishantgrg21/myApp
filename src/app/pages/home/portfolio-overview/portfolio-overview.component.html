@@ -15,11 +15,11 @@
 <!-- Right Side Menu Start -->
 <div class="right-block">
     <!-- button1 start -->
-    <div class="outline-button-export" (click)="openPopup()"    >
-        <img src="../../../../assets/images/export.svg" alt="export" class="">
+    <div class="outline-button-export" mat-button  (click)="openDialog()" >
+        <img src="../../../../assets/images/export.svg" alt="export">
         Export Master Report 
     </div>
-
+<!-- button2 start -->
     <div class="btnBorder" (mouseenter)="dropdownContent=false" (mouseleave)="dropdownContent=true">
         {{SelectedValue}}
         <span class="material-icons rounded-icon"> expand_more </span>
@@ -29,27 +29,10 @@
             </li>
         </ul>
     </div>
-    
-</div>
- <div
-  class="modal" [ngStyle]="{'display':displayStyle}">
-  <div class="modal-dialog" role="document"  data-target="#modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">GeeksForGeeks</h4>
-      </div>
-      <div class="modal-body">
-        <p>One Stop Solution for all CS problems</p>
+
+    <!-- button3 start -->
+   
   
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" 
-                (click)="closePopup()">
-          Close
-        </button>
-      </div>
+
     </div>
-  </div>
-</div>
-
-
+  
