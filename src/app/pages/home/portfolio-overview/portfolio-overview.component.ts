@@ -2,11 +2,13 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {FormControl} from '@angular/forms';
-
+import pdata1 from '../portfolio-overview/data1.json';
+import pdata2 from '../portfolio-overview/data2.json';
 @Component({
   selector: 'app-portfolio-overview',
   templateUrl: './portfolio-overview.component.html',
   styleUrls: ['./portfolio-overview.component.css'],
+  
   animations:[
     trigger('myanimate1', [
       state('initial',
@@ -60,20 +62,18 @@ import {FormControl} from '@angular/forms';
 })
 export class PortfolioOverviewComponent implements OnInit {
   accountToAmount:any = "By Account";
-  toppings = new FormControl();
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  public Data1:{image:string,title:string,amount:string, percent:string}[] = pdata1 ;
+  public Data2:{image:string,title:string,amount:string, percent:string}[] = pdata2 ;
 
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(ExportMasterReportDialog,{
       height: '430px',
-      width: '500px'
+      width: '500px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed();
   }
   
  

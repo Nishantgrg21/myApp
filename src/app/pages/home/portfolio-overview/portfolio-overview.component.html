@@ -1,3 +1,4 @@
+<div class="portfolio-block">
 <!-- Left Side Toggle Button Start -->
 <div class="left-block">
     <div class="account" (click)="stateName1()"  [@myanimate1]="animateState1" (click)="accountToAmount = 'By Account'">
@@ -35,4 +36,60 @@
   
 
     </div>
+</div>
+
+
+      
+  <div class="portfolio-block" *ngIf="accountToAmount === 'By Account'">
+    <div class="dashboard-block b-bdr"  *ngFor=" let data of Data1" value="Pdata">
+        <div class="portfolio-box" >
+            <div class="portfolio-icon">
+                <img src={{data.image}} class="img-width">
+            </div>
+            <div class="portfolio-txt">
+                <div class="portfolio-txt-1">
+                    <span >{{data.title}}</span>
+                    <span>
+                        <img src="assets/images/info-d.png" alt="icon" class="portfolio-txt-1-icon">
+                    </span>
+                </div>
+                <div class="portfolio-txt-2" >
+                    <span class="portfolio-txt-2-rate"  mat-raised-button
+                    matTooltip="Info about the action"
+                    matTooltipClass="example-tooltip-red"
+                    aria-label="Button that shows a red tooltip"
+                    class="example-button">{{data.amount}}</span>
+                    <span  class="portfolio-txt-2-percent">{{data.percent}}</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ 
+</div>
+
+<div class="portfolio-block " *ngIf="accountToAmount === 'By Amount'">
+    <div class="dashboard-block b-bdr" *ngFor=" let data2 of Data2">
+        <div class="portfolio-box">
+            <div class="portfolio-icon">
+                <img  src={{data2.image}} class="img-width">
+            </div>
+            <div class="portfolio-txt">
+                <div class="portfolio-txt-1">
+                    <span>{{data2.title}}</span>
+                    <span>
+                        <img src="assets/images/info-d.png" alt="icon" class="portfolio-txt-1-icon">
+                    </span>
+                </div>
+                <div class="portfolio-txt-2">
+                    <span class="portfolio-txt-2-rate">{{data2.amount}} </span>
+                    <span  class="portfolio-txt-2-percent">{{data2.percent}} </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  
+</div> 
+
   
