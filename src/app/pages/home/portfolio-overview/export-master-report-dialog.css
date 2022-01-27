@@ -4,7 +4,6 @@
 
   .mat-dialog-box {
     display: block;
-    border-radius: 4px;
     box-sizing: border-box;
     overflow: hidden!important;
     outline: 0;
@@ -12,13 +11,17 @@
     height: 100%;
     min-height: inherit;
     max-height: inherit;
-    background: #000!important;
+    background: #181818!important;
     padding: 0!important;
+    border: 1px solid #181818;
+    border-radius: 0px;
+   
 }
   .modal-header {
     display: flex;
     justify-content: center;
     border: none;
+    padding: 1rem  0rem 0rem  0rem;
   }
   .modal-body{
     font-size: 1rem;
@@ -48,3 +51,12 @@
     font-size: 1rem;
     line-height: 1.5;
 }  
+
+.mat-dialog-box{
+  height: 400px;
+  width: 500px !important;padding: 0px!important;
+ }
+ .mat-dialog-container {
+  padding: 0px !important;
+  border-radius: 5px;
+}

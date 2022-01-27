@@ -78,7 +78,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     FormsModule,
     MatDialogModule, 
     MatCardModule,
-    MatDialogModule,
     MatButtonModule,
     MatTooltipModule,
     MatAutocompleteModule,
@@ -90,8 +89,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatCheckboxModule,
     MatChipsModule,
     MatCommonModule,
-    MatDatepickerModule
-
+    MatDatepickerModule,
   ]
 })
 export class AngularmaterialModule { }

@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {FormControl} from '@angular/forms';
 import pdata1 from '../portfolio-overview/data1.json';
 import pdata2 from '../portfolio-overview/data2.json';
+import {ViewEncapsulation} from '@angular/core';
 @Component({
   selector: 'app-portfolio-overview',
   templateUrl: './portfolio-overview.component.html',
@@ -68,9 +69,9 @@ export class PortfolioOverviewComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(ExportMasterReportDialog,{
-      height: '430px',
-      width: '500px',
+    const dialogRef = this.dialog.open(ExportMasterReportDialog,{ panelClass: 'custom-dialog-container1'
+      // height: '430px',
+      // width: '500px',
     });
 
     dialogRef.afterClosed();
@@ -117,6 +118,7 @@ export class PortfolioOverviewComponent implements OnInit {
   selector: 'export-master-report-dialog',
   templateUrl: 'export-master-report-dialog.html',
   styleUrls: ['export-master-report-dialog.css'],
+  encapsulation: ViewEncapsulation.None 
 })
 export class ExportMasterReportDialog {
   constructor(
