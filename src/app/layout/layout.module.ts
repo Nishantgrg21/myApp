@@ -11,7 +11,6 @@ import { UserManagementComponent } from '../pages/user-management/user-managemen
 import { RouterModule } from '@angular/router';
 import { ShareModule } from '../shared/share.module';
 import { PortfolioOverviewComponent } from '../pages/home/portfolio-overview/portfolio-overview.component';
-import { AngularmaterialModule } from '../angularmaterial/angularmaterial.module';
 import { ResolutionRateComponent } from '../pages/home/resolution-rate/resolution-rate.component';
 import { PortfolioDistributionComponent } from '../pages/home/portfolio-distribution/portfolio-distribution.component';
 import { StatewiseComponent } from '../pages/home/statewise/statewise.component';
@@ -19,6 +18,7 @@ import { LivePaymentComponent } from '../pages/home/live-payment/live-payment.co
 import { SettlementOfferComponent } from '../pages/home/settlement-offer/settlement-offer.component';
 import { ResolutionTrendComponent } from '../pages/home/resolution-trend/resolution-trend.component';
 import { PortfolioComponent } from '../pages/home/portfolio/portfolio.component';
+import { AngularmaterialModule } from './angularmaterial.module';
 
 
 

@@ -21,6 +21,39 @@
         Export Master Report 
     </div>
 <!-- button2 start -->
+
+<div class="btnBorder"  (mouseenter)="dropdownCheckboxContent=false" (mouseleave)="dropdownCheckboxContent=true">
+    {{NewSelectedValue}}
+    <span class="material-icons rounded-icon"> expand_more </span>
+    <!-- <ul class="dropdownContent" *ngIf="!dropdownCheckboxContent" (click)="dropdownCheckboxContent = true"  >
+        <li class="dropdown-item" *ngFor="let data2 of bucketList"  (click)="onChange2(data2)"  [value]="data2" [class.dropdown-item-bg]="data2==NewSelectedValue">
+            {{data2.value1}}
+        </li>
+        <li class="dropdown-item" *ngFor="let data2 of bucketList"  (click)="onChange2(data2)"  [value]="data2" [class.dropdown-item-bg]="data2==NewSelectedValue">
+            {{data2.value2}}
+            <span class="material-icons" style="float:right"> expand_more </span>
+           
+        </li>
+
+    </ul>  -->
+
+    <ul class="dropdownContent" *ngIf="!dropdownCheckboxContent" (click)="dropdownCheckboxContent = true"  >
+        <li class="dropdown-item" *ngFor="let data of bucketList"  (click)="onChange2(data)"  [value]="data" [class.dropdown-item-bg]="data==NewSelectedValue">
+            {{data.value}}
+           
+            <span class="material-icons"  style="float:right"> expand_more </span>
+        </li>
+        
+        
+
+    </ul>
+    
+
+</div>
+
+   
+
+    <!-- button3 start -->
     <div class="btnBorder" (mouseenter)="dropdownContent=false" (mouseleave)="dropdownContent=true">
         {{SelectedValue}}
         <span class="material-icons rounded-icon"> expand_more </span>
@@ -28,12 +61,9 @@
             <li class="dropdown-item" *ngFor="let data of dropdownData"  (click)="onChange1(data)"  [value]="data" [class.dropdown-item-bg]="data==SelectedValue">
                 {{data}}
             </li>
+         
         </ul>
     </div>
-
-    <!-- button3 start -->
-   
-  
 
     </div>
 </div>
@@ -87,5 +117,3 @@
     </div>
   
 </div> 
-
-  

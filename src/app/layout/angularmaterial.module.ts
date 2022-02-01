@@ -42,7 +42,6 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -52,7 +51,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatRadioModule,
     MatListModule,
     MatExpansionModule,
-    MatRippleModule,
+    MatRippleModule,MatDatepickerModule,
     MatDividerModule,
     MatProgressBarModule,
     MatSnackBarModule,

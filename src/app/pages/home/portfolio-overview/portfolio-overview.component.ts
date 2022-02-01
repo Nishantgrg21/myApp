@@ -1,15 +1,15 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {FormControl} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import pdata1 from '../portfolio-overview/data1.json';
 import pdata2 from '../portfolio-overview/data2.json';
 import {ViewEncapsulation} from '@angular/core';
+
 @Component({
   selector: 'app-portfolio-overview',
   templateUrl: './portfolio-overview.component.html',
   styleUrls: ['./portfolio-overview.component.css'],
-  
   animations:[
     trigger('myanimate1', [
       state('initial',
@@ -62,6 +62,7 @@ import {ViewEncapsulation} from '@angular/core';
   ]
 })
 export class PortfolioOverviewComponent implements OnInit {
+  
   accountToAmount:any = "By Account";
   public Data1:{image:string,title:string,amount:string, percent:string}[] = pdata1 ;
   public Data2:{image:string,title:string,amount:string, percent:string}[] = pdata2 ;
@@ -95,19 +96,77 @@ export class PortfolioOverviewComponent implements OnInit {
     "Bucket 1", "Bucket 2" ,"Bucket 3","Bucket 4"
   ]
 
+  
+
   dropdownContent:  any;
+  dropdownCheckboxContent:  any;
 
   ngOnInit(): void {
     this.dropdownContent = true;
+    this.dropdownCheckboxContent = true;
+    this.setBucketListLoanData();
   }
 
    
   SelectedValue:any ="Bucket 3";
   onChange1(data:any){
     this.SelectedValue = data;
-  console.log(this.SelectedValue);
-
+  // console.log(this.SelectedValue);
   }
+
+  // Checkbox button
+  bucketList!:any[];
+  setBucketListLoanData(){  
+    this.bucketList =[
+      {id:1,value:"Credit Card",
+       submenu:[]
+      },
+      {value:"Loan",
+        submenu: [
+        {id:1,checked: true, submenuOption: 'Home Loan'},
+        {id:2,checked: true, submenuOption: 'Loan Against Property'},
+        {id:3,checked: true, submenuOption: 'Pay Day Loan'},
+        {id:4,checked: true, submenuOption: 'Personal Loan'},
+        {id:5,checked: true, submenuOption: 'Business Loan'},
+        ]}
+    ]
+  }
+
+  // selection = [
+  //   {  submenuOption: 'Home Loan'},
+  //   {  submenuOption: 'Business Loan'},
+  // ];
+
+  // dropdownDataNew: any =[
+  //   // {value1:"Credit Card",
+  //   //  option:'Credit Card',
+  //   //   expand:false,
+  //   //  submenu:[]
+  //   // },
+  //   // {value2:"Loan",
+  //   //  option:'Credit Card',
+  //   //   expand:false, 
+  //   //   submenu: [
+  //   //   {check: true, submenuOption: 'Home Loan'},
+  //   //   {check: true, submenuOption: 'Loan Against Property'},
+  //   //   {check: true, submenuOption: 'Pay Day Loan'},
+  //   //   {check: true, submenuOption: 'Personal Loan'},
+  //   //   {check: true, submenuOption: 'Business Loan'},
+  //   //   ]}
+  // ]
+
+  ;
+
+  NewSelectedValue:any = "Credit Card";
+  onChange2(data:any){
+    this.NewSelectedValue = data.value;
+  }
+
+
+
+
+ 
+  
 
 
 }
@@ -128,4 +187,6 @@ export class ExportMasterReportDialog {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+
 }

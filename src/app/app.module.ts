@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ShareModule,
     LayoutModule ,
-    FormsModule
+    FormsModule,
     
   ],
   providers: [],

@@ -84,7 +84,7 @@ font-size: 24px;
     z-index: 1;
     margin-left: -17px;
    top: 33px;
-    padding: 0px;
+    padding:0px;
 
   }
   .btnBorder:hover .rounded-icon {
@@ -94,6 +94,7 @@ font-size: 24px;
 
   .dropdown-item{
     border-bottom: 1px solid #1e1e1e !important;
+   padding:5px 20px!important;
   }  
   .dropdownContent li {
     color: #fff;
@@ -213,4 +214,28 @@ font-size: 24px;
 }
 .custom-dialog-container1{
   width:300px!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
 }
