@@ -12,4 +12,5 @@ export class SettlementOfferComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

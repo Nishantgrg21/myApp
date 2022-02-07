@@ -85,6 +85,7 @@ font-size: 24px;
     margin-left: -17px;
    top: 33px;
     padding:0px;
+    font-size: 1rem;
 
   }
   .btnBorder:hover .rounded-icon {
@@ -215,27 +216,106 @@ font-size: 24px;
 .custom-dialog-container1{
   width:300px!important;
 }
+.cb-item{
+  padding: 8px 12px 8px 16px!important;
+  cursor: pointer;
+}
+.curser{
+cursor: pointer;
+}
+/* .checkbox-select{
+  position: absolute;
+  top: 10px;
+  left: 13px;
+  height: 16px;
+    width: 16px!important;
+    border: 1px solid #B16205;
+    background: #000;
+    font-size: 1rem;
+} */
+
+
+/* checkbox css */
+
+.cb_container {
+  
+  position: relative;
+  padding-left: 35px;
+  /* margin-bottom: 12px; */
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.cb_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #000;
+  border: 1px solid #df8f01;
+}
 
 
 
+/* When the checkbox is checked, add a blue background */
+.cb_container input:checked ~ .checkmark {
+  background-color: #000;
+  border: 1px solid #df8f01;
+}
 
-
-
-
-
-
-
-
-
-
-
-.example-tree-invisible {
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
   display: none;
 }
 
-.example-tree ul,
-.example-tree li {
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style-type: none;
+/* Show the checkmark when checked */
+.cb_container input:checked ~ .checkmark:after {
+  display: block;color:black
 }
+
+/* Style the checkmark/indicator */
+.cb_container .checkmark:after {
+  left: 4px;
+  bottom: 4px;
+  width: 7px;
+  height: 10px;
+  border: solid #f7a81b;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

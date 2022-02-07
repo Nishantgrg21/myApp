@@ -5,14 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './shared/share.module';
 import { LayoutModule } from './layout/layout.module';
-import { FormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
- 
-   
-
 
   ],
   imports: [
@@ -20,9 +18,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ShareModule,
-    LayoutModule ,
-    FormsModule,
-    
+    LayoutModule , FormsModule,ReactiveFormsModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

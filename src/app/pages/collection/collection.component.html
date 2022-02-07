@@ -1,1 +1,6 @@
 <p>collection works!</p>
+<div *ngFor="let checkbox of checkboxes">
+    <label class="btn btn-filter">
+      <input type="checkbox" name="trades" [checked]="checkbox.selected" (change)="singleCheckbox($event)">{{ checkbox.label }}
+    </label>
+  </div>

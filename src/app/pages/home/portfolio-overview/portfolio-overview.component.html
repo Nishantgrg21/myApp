@@ -1,104 +1,107 @@
 <div class="portfolio-block">
-<!-- Left Side Toggle Button Start -->
-<div class="left-block">
-    <div class="account" (click)="stateName1()"  [@myanimate1]="animateState1" (click)="accountToAmount = 'By Account'">
-        <i class="fa fa-user-circle af-size"></i>
+    <!-- Left Side Toggle Button Start -->
+    <div class="left-block">
+        <div class="account" (click)="stateName1()" [@myanimate1]="animateState1"
+            (click)="accountToAmount = 'By Account'">
+            <i class="fa fa-user-circle af-size"></i>
+        </div>
+        <div class="hr-line"> </div>
+        <div class="rupees" (click)="stateName2()" [@myanimate2]="animateState2"
+            (click)="accountToAmount = 'By Amount'">
+            <span class="inr-icon" [@myanimate3]="animateState2"> ₹</span>
+        </div>
+        <div class="vr-line"> </div>
+        <div class="block-text"> {{accountToAmount}}</div>
     </div>
-    <div class="hr-line"> </div>
-    <div class="rupees" (click)="stateName2()"  [@myanimate2]="animateState2" (click)="accountToAmount = 'By Amount'">
-        <span class="inr-icon" [@myanimate3]="animateState2"> ₹</span>
+    <!-- Left Side Toggle Button End -->
+
+    <!-- Right Side Menu Start -->
+    <div class="right-block">
+        <!-- button1 start -->
+        <div class="outline-button-export" mat-button (click)="openDialog()">
+            <img src="../../../../assets/images/export.svg" alt="export">
+            Export Master Report
+        </div>
+        <!-- button2 start -->
+        <div class="btnBorder" (mouseenter)="dropdownCheckboxContent=false" (mouseleave)="dropdownCheckboxContent=true">
+            {{NewSelectedValue}}
+            <span class="material-icons rounded-icon"> expand_more </span>
+            <ul class="dropdownContent" *ngIf="!dropdownCheckboxContent" (click)="dropdownCheckboxContent = true">
+                <li class="dropdown-item" *ngFor="let data of bucketList" (click)="onChange2(data)" [value]="data"
+                    [class.dropdown-item-bg]="data==NewSelectedValue">
+                    {{data.value}}
+                    <span class="material-icons" style="float:right"> expand_more </span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- button4 start -->
+        <div class="btnBorder" (mouseenter)="checkboxButton=false" (mouseleave)="checkboxButton=true">
+            {{SelectedCheckedValue}}
+            <span class="material-icons rounded-icon"> expand_more </span>
+            <ul class="dropdownContent" *ngIf="!checkboxButton" >
+                <li class="dropdown-item cb-item" *ngFor="let checkedData of checkedValue"
+                    [value]="checkedData" [class.dropdown-item-bg]="checkedData==SelectedValue">
+
+                    <label class="form-check-label curser cb_container">
+                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event)"
+                    [checked]="checkedData.selected" name="{{ checkedData.name }}"  id="{{checkedData.name}}" >
+                    <span class="checkmark"> </span>   
+                    {{checkedData.name}}
+                    </label>
+                    <span class="material-icons" style="float:right"> chevron_right </span>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- button3 start -->
+        <div class="btnBorder" (mouseenter)="dropdownContent=false" (mouseleave)="dropdownContent=true">
+            {{SelectedValue}}
+            <span class="material-icons rounded-icon"> expand_more </span>
+            <ul class="dropdownContent" *ngIf="!dropdownContent" (click)="dropdownContent = true">
+                <li class="dropdown-item" *ngFor="let data of dropdownData" (click)="onChange1(data)" [value]="data"
+                    [class.dropdown-item-bg]="data==SelectedValue">
+                    {{data}}
+                </li>
+            </ul>
+        </div>
+
     </div>
-    <div class="vr-line"> </div>
-    <div class="block-text" > {{accountToAmount}}</div>
 </div>
-<!-- Left Side Toggle Button End -->
-
-<!-- Right Side Menu Start -->
-<div class="right-block">
-    <!-- button1 start -->
-    <div class="outline-button-export" mat-button  (click)="openDialog()" >
-        <img src="../../../../assets/images/export.svg" alt="export">
-        Export Master Report 
-    </div>
-<!-- button2 start -->
-
-<div class="btnBorder"  (mouseenter)="dropdownCheckboxContent=false" (mouseleave)="dropdownCheckboxContent=true">
-    {{NewSelectedValue}}
-    <span class="material-icons rounded-icon"> expand_more </span>
-    <!-- <ul class="dropdownContent" *ngIf="!dropdownCheckboxContent" (click)="dropdownCheckboxContent = true"  >
-        <li class="dropdown-item" *ngFor="let data2 of bucketList"  (click)="onChange2(data2)"  [value]="data2" [class.dropdown-item-bg]="data2==NewSelectedValue">
-            {{data2.value1}}
-        </li>
-        <li class="dropdown-item" *ngFor="let data2 of bucketList"  (click)="onChange2(data2)"  [value]="data2" [class.dropdown-item-bg]="data2==NewSelectedValue">
-            {{data2.value2}}
-            <span class="material-icons" style="float:right"> expand_more </span>
-           
-        </li>
-
-    </ul>  -->
-
-    <ul class="dropdownContent" *ngIf="!dropdownCheckboxContent" (click)="dropdownCheckboxContent = true"  >
-        <li class="dropdown-item" *ngFor="let data of bucketList"  (click)="onChange2(data)"  [value]="data" [class.dropdown-item-bg]="data==NewSelectedValue">
-            {{data.value}}
-           
-            <span class="material-icons"  style="float:right"> expand_more </span>
-        </li>
-        
-        
-
-    </ul>
-    
-
-</div>
-
-   
-
-    <!-- button3 start -->
-    <div class="btnBorder" (mouseenter)="dropdownContent=false" (mouseleave)="dropdownContent=true">
-        {{SelectedValue}}
-        <span class="material-icons rounded-icon"> expand_more </span>
-        <ul class="dropdownContent" *ngIf="!dropdownContent" (click)="dropdownContent = true"  >
-            <li class="dropdown-item" *ngFor="let data of dropdownData"  (click)="onChange1(data)"  [value]="data" [class.dropdown-item-bg]="data==SelectedValue">
-                {{data}}
-            </li>
-         
-        </ul>
-    </div>
-
-    </div>
-</div>
 
 
-      
-  <div class="portfolio-block" *ngIf="accountToAmount === 'By Account'">
-    <div class="dashboard-block b-bdr"  *ngFor=" let data of Data1" value="Pdata">
-        <div class="portfolio-box" >
+
+<div class="portfolio-block" *ngIf="accountToAmount === 'By Account'">
+    <div class="dashboard-block b-bdr" *ngFor=" let data of Data1" value="Pdata">
+        <div class="portfolio-box">
             <div class="portfolio-icon">
                 <img src={{data.image}} class="img-width">
             </div>
             <div class="portfolio-txt">
                 <div class="portfolio-txt-1">
-                    <span >{{data.title}}</span>
+                    <span>{{data.title}}</span>
                     <span>
                         <img src="assets/images/info-d.png" alt="icon" class="portfolio-txt-1-icon">
                     </span>
                 </div>
-                <div class="portfolio-txt-2" >
-                    <span class="portfolio-txt-2-rate" >{{data.amount}}</span>
-                    <span  class="portfolio-txt-2-percent" >{{data.percent}}</span>
+                <div class="portfolio-txt-2">
+                    <span class="portfolio-txt-2-rate">{{data.amount}}</span>
+                    <span class="portfolio-txt-2-percent">{{data.percent}}</span>
                 </div>
             </div>
 
         </div>
     </div>
- 
+
 </div>
 
 <div class="portfolio-block " *ngIf="accountToAmount === 'By Amount'">
     <div class="dashboard-block b-bdr" *ngFor=" let data2 of Data2">
         <div class="portfolio-box">
             <div class="portfolio-icon">
-                <img  src={{data2.image}} class="img-width">
+                <img src={{data2.image}} class="img-width">
             </div>
             <div class="portfolio-txt">
                 <div class="portfolio-txt-1">
@@ -109,11 +112,11 @@
                 </div>
                 <div class="portfolio-txt-2">
                     <span class="portfolio-txt-2-rate">{{data2.amount}} </span>
-                    <span  class="portfolio-txt-2-percent">{{data2.percent}} </span>
+                    <span class="portfolio-txt-2-percent">{{data2.percent}} </span>
                 </div>
             </div>
 
         </div>
     </div>
-  
-</div> 
+
+</div>
