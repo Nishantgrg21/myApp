@@ -93,7 +93,7 @@ export class PortfolioOverviewComponent implements OnInit {
     amount: string;
     percent: string;
   }[] = pdata2;
-  isselected: any;
+  checkedData: any;
 
   constructor(public dialog: MatDialog) {}
 
@@ -132,6 +132,7 @@ export class PortfolioOverviewComponent implements OnInit {
     this.checkboxContent = true;
     this.checkboxButton = true;
     this.setBucketListLoanData();
+    this.SelectedCheckedValue =new Array<string>();
   }
 
   SelectedValue: any = 'Bucket 3';
@@ -191,26 +192,24 @@ export class PortfolioOverviewComponent implements OnInit {
   checkdArray: Array<any> = [];
 
   checkedValue = [
-    { id:1,name: 'Live', isselected: false },
+    { id:1,name: 'Live', isselected: true },
     {id:2, name: 'Pre-NPA', isselected: false }, 
     {id:3, name: 'NPA', isselected: false },
   ];
 
   SelectedCheckedValue: any = 'Live';
-  allSelected = false;
-  onCheck(event: any){
-    // if (event.target.checked == false) {
-    //   this.SelectedCheckedValue =this.checkedValue;
-        
-    //     }
-    //     else{
-    //       console.log('unchecked');
-    //     }
-   console.log(this.checkedValue);
-   this.SelectedCheckedValue =this.checkedValue;
-  }
 
- 
+  onCheck(event: any,name:any){
+    if (event.target.checked == true) {
+      console.log(name + 'checked');
+       this.SelectedCheckedValue.push(name);
+        }
+        else{
+          console.log(name + 'unchecked');
+           this.SelectedCheckedValue= this.SelectedCheckedValue.filter((m: any)=>m!=name);
+        }
+  console.log(this.SelectedCheckedValue);
+  }
 
 
 

@@ -44,8 +44,8 @@
                     [value]="checkedData" [class.dropdown-item-bg]="checkedData==SelectedValue">
 
                     <label class="form-check-label curser cb_container">
-                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event)" [(ngModel)]="checkedData.isselected"
-                    [checked]="checkedData.isselected" name="{{ checkedData.name }}"  id="{{checkedData.name}}" >
+                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event,checkedData.name)" [(ngModel)]="checkedData.isselected"
+                    [checked]="checkedData.isselected" name="{{ checkedData.name }}"  id="{{checkedData.name}}" value="checkedData.name">
                     <span class="checkmark"> </span>   
                     {{checkedData.name}}
                     </label>
