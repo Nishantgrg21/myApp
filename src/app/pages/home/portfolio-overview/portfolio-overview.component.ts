@@ -187,12 +187,10 @@ export class PortfolioOverviewComponent implements OnInit {
     this.NewSelectedValue = data.value;
   }
 
-  ischecked: boolean = false;
-  checkAllTrades: boolean = false;
-  checkdArray: Array<any> = [];
+
 
   checkedValue = [
-    { id:1,name: 'Live', isselected: true },
+    { id:1,name: 'Live', isselected: false },
     {id:2, name: 'Pre-NPA', isselected: false }, 
     {id:3, name: 'NPA', isselected: false },
   ];
@@ -203,12 +201,13 @@ export class PortfolioOverviewComponent implements OnInit {
     if (event.target.checked == true) {
       console.log(name + 'checked');
        this.SelectedCheckedValue.push(name);
+       this.SelectedCheckedValue= this.SelectedCheckedValue.filter((m: any)=>m=name);
         }
         else{
           console.log(name + 'unchecked');
            this.SelectedCheckedValue= this.SelectedCheckedValue.filter((m: any)=>m!=name);
         }
-  console.log(this.SelectedCheckedValue);
+   console.log(this.SelectedCheckedValue);
   }
 
 
