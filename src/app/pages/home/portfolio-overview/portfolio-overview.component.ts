@@ -5,12 +5,14 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 import pdata1 from '../portfolio-overview/data1.json';
 import pdata2 from '../portfolio-overview/data2.json';
 import { ViewEncapsulation } from '@angular/core';
+import { MatOption } from '@angular/material/core';
+import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-portfolio-overview',
@@ -73,6 +75,10 @@ import { ViewEncapsulation } from '@angular/core';
     ]),
   ],
 })
+
+
+
+
 export class PortfolioOverviewComponent implements OnInit {
   accountToAmount: any = 'By Account';
   public Data1: {
@@ -87,6 +93,7 @@ export class PortfolioOverviewComponent implements OnInit {
     amount: string;
     percent: string;
   }[] = pdata2;
+  isselected: any;
 
   constructor(public dialog: MatDialog) {}
 
@@ -182,19 +189,28 @@ export class PortfolioOverviewComponent implements OnInit {
   ischecked: boolean = false;
   checkAllTrades: boolean = false;
   checkdArray: Array<any> = [];
+
   checkedValue = [
-    { name: 'Live', selected: false },
-    { name: 'Pre-NPA', selected: false },
-    { name: 'NPA', selected: false },
+    { id:1,name: 'Live', isselected: false },
+    {id:2, name: 'Pre-NPA', isselected: false }, 
+    {id:3, name: 'NPA', isselected: false },
   ];
 
   SelectedCheckedValue: any = 'Live';
-
-  onCheck(event: any) {
-    if (event.target.checked == true) {
-      this.ischecked = true;
-    }
+  allSelected = false;
+  onCheck(event: any){
+    // if (event.target.checked == false) {
+    //   this.SelectedCheckedValue =this.checkedValue;
+        
+    //     }
+    //     else{
+    //       console.log('unchecked');
+    //     }
+   console.log(this.checkedValue);
+   this.SelectedCheckedValue =this.checkedValue;
   }
+
+ 
 
 
 

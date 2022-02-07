@@ -56,7 +56,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -78,7 +78,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     RouterModule,
-    CommonModule, 
+    CommonModule, FormsModule,ReactiveFormsModule,
     ShareModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
@@ -115,11 +115,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
-    MatCheckboxModule,
     MatChipsModule,
     MatCommonModule,
     MatDatepickerModule,
-   
   ],
   exports:[
     LayoutComponent

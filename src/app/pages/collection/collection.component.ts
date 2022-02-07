@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatSelect } from '@angular/material/select';
+import { MatOption } from '@angular/material/core';
 
 @Component({
   selector: 'app-collection',
@@ -6,39 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collection.component.css']
 })
 export class CollectionComponent implements OnInit {
-
-  constructor() { }
-
   ngOnInit(): void {
+    // throw new Error('Method not implemented.');
   }
 
-  
-  name = 'Angular';
+  // @ViewChild('select') select!: MatSelect;
 
-  ischecked: boolean = false
-  checkAllTrades: boolean = false
-  checkboxes = [
-    { label: 'check 1', selected: false },
-    { label: 'check 2', selected: false },
-    { label: 'check 3', selected: false },
-    { label: 'check 4', selected: false }
-  ];
-
-  toggleCheckboxAll(event:any) {
-    const checked = event.target.checked;
-    this.checkboxes.forEach(item => item.selected = checked);
-  }
-
-  singleCheckbox(event:any) {
-    if (event.target.checked == true) {
-      this.ischecked = true;
-      console.log(this.ischecked)
-    }
-
-    if (this.ischecked && this.checkAllTrades) {
-      event.target.checked = true;
-      console.log(event.target.checked)
-    }
-  }
-
+  // allSelected = false;
+  // foods: any[] = [
+  //   { value: 'steak-0', viewValue: 'Steak' },
+  //   { value: 'pizza-1', viewValue: 'Pizza' },
+  //   { value: 'tacos-2', viewValue: 'Tacos' },
+  // ];
+  // toggleAllSelection() {
+  //   if (this.allSelected) {
+  //     this.select.options.forEach((item: MatOption) => item.select());
+  //   } else {
+  //     this.select.options.forEach((item: MatOption) => item.deselect());
+  //   }
+  // }
+  // optionClick() {
+  //   let newStatus = true;
+  //   this.select.options.forEach((item: MatOption) => {
+  //     if (!item.selected) {
+  //       newStatus = false;
+  //     }
+  //   });
+  //   this.allSelected = newStatus;
+  // }
 }

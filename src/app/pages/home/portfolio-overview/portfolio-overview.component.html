@@ -39,19 +39,22 @@
         <div class="btnBorder" (mouseenter)="checkboxButton=false" (mouseleave)="checkboxButton=true">
             {{SelectedCheckedValue}}
             <span class="material-icons rounded-icon"> expand_more </span>
-            <ul class="dropdownContent" *ngIf="!checkboxButton" >
+             <ul class="dropdownContent" *ngIf="!checkboxButton" >
                 <li class="dropdown-item cb-item" *ngFor="let checkedData of checkedValue"
                     [value]="checkedData" [class.dropdown-item-bg]="checkedData==SelectedValue">
 
                     <label class="form-check-label curser cb_container">
-                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event)"
-                    [checked]="checkedData.selected" name="{{ checkedData.name }}"  id="{{checkedData.name}}" >
+                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event)" [(ngModel)]="checkedData.isselected"
+                    [checked]="checkedData.isselected" name="{{ checkedData.name }}"  id="{{checkedData.name}}" >
                     <span class="checkmark"> </span>   
                     {{checkedData.name}}
                     </label>
                     <span class="material-icons" style="float:right"> chevron_right </span>
                 </li>
-            </ul>
+            </ul> 
+
+            
+      
         </div>
 
 
@@ -87,7 +90,7 @@
                     </span>
                 </div>
                 <div class="portfolio-txt-2">
-                    <span class="portfolio-txt-2-rate">{{data.amount}}</span>
+                    <span class="portfolio-txt-2-rate" >{{data.amount}}</span>
                     <span class="portfolio-txt-2-percent">{{data.percent}}</span>
                 </div>
             </div>
