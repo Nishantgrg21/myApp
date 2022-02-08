@@ -36,11 +36,11 @@
         </div>
 
         <!-- button4 start -->
-        <div class="btnBorder"  (mouseenter)="checkboxButton=false" (mouseleave)="checkboxButton=true">
+        <div class="btnBorderchkbox"  (mouseenter)="checkboxButton=false" (mouseleave)="checkboxButton=true">
             {{SelectedCheckedValue}}
             <span class="material-icons rounded-icon"> expand_more </span>
-             <ul class="dropdownContent" *ngIf="!checkboxButton" >
-                <li class="dropdown-item cb-item" *ngFor="let checkedData of checkedValue"
+             <ul class="dropdownContentchkbox" *ngIf="!checkboxButton" >
+                <li class="dropdown-itemchkbox cb-item" *ngFor="let checkedData of checkedValue"
                     [value]="checkedData" [class.dropdown-item-bg]="checkedData==SelectedValue">
 
                     <label class="form-check-label curser cb_container">
