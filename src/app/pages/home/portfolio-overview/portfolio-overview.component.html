@@ -23,7 +23,7 @@
             Export Master Report
         </div>
         <!-- button2 start -->
-        <div class="btnBorder" (mouseenter)="dropdownCheckboxContent=false" (mouseleave)="dropdownCheckboxContent=true">
+        <!-- <div class="btnBorder" (mouseenter)="dropdownCheckboxContent=false" (mouseleave)="dropdownCheckboxContent=true">
             {{NewSelectedValue}}
             <span class="material-icons rounded-icon"> expand_more </span>
             <ul class="dropdownContent" *ngIf="!dropdownCheckboxContent" (click)="dropdownCheckboxContent = true">
@@ -33,39 +33,48 @@
                     <span class="material-icons" style="float:right"> expand_more </span>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <!-- button4 start -->
         <div class="btnBorderchkbox"  (mouseenter)="checkboxButton=false" (mouseleave)="checkboxButton=true">
-            {{SelectedCheckedValue}}
+            {{SelectedChecked}}
             <span class="material-icons rounded-icon"> expand_more </span>
              <ul class="dropdownContentchkbox" *ngIf="!checkboxButton" >
-                <li class="dropdown-itemchkbox cb-item" *ngFor="let checkedData of checkedValue"
-                    [value]="checkedData" [class.dropdown-item-bg]="checkedData==SelectedValue">
+                <li class="dropdown-itemchkbox cb-item" *ngFor="let mydata of CheckedList"
+                    [value]="checkedData" [class.dropdown-item-bg]="mydata===SelectedChecked">
 
                     <label class="form-check-label curser cb_container">
-                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event,checkedData.name)" [(ngModel)]="checkedData.isselected"
-                    [checked]="checkedData.isselected" name="{{ checkedData.name }}"  id="{{checkedData.name}}" value="checkedData.name">
+                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event,mydata.name)" [(ngModel)]="mydata.isselected"
+                    [checked]="mydata.isselected" name="mydata.name"  id="mydata.name" value="mydata.name">
                     <span class="checkmark"> </span>   
-                    {{checkedData.name}}
+                    {{mydata.name}}
                     </label>
                     <span class="material-icons" style="float:right"> chevron_right </span>
                 </li>
             </ul> 
-
-            
-      
         </div>
 
 
 
         <!-- button3 start -->
         <div class="btnBorder" (mouseenter)="dropdownContent=false" (mouseleave)="dropdownContent=true">
-            {{SelectedValue}}
+            {{SelectedData}}
             <span class="material-icons rounded-icon"> expand_more </span>
-            <ul class="dropdownContent" *ngIf="!dropdownContent" (click)="dropdownContent = true">
-                <li class="dropdown-item" *ngFor="let data of dropdownData" (click)="onChange1(data)" [value]="data"
-                    [class.dropdown-item-bg]="data==SelectedValue">
+            <ul class="dropdownContent" *ngIf="!dropdownContent" (click)="dropdownContent">
+                <li class="dropdown-item" *ngFor="let data of dropdownData" (click)="onChange(data)" [value]="data"
+                    [class.dropdown-item-bg]="data==SelectedData">
+                    {{data}}
+                </li>
+            </ul>
+        </div>
+
+        <!-- button3 start -->
+        <div class="btnBorder" (mouseenter)="dropdownContent2=false" (mouseleave)="dropdownContent2=true">
+            {{SelectedData2}}
+            <span class="material-icons rounded-icon"> expand_more </span>
+            <ul class="dropdownContent" *ngIf="!dropdownContent2" (click)="dropdownContent2 = true">
+                <li class="dropdown-item" *ngFor="let data of dropdownData2" (click)="onChange2(data)" [value]="data"
+                    [class.dropdown-item-bg]="data==SelectedData2">
                     {{data}}
                 </li>
             </ul>
@@ -101,7 +110,7 @@
 </div>
 
 <div class="portfolio-block " *ngIf="accountToAmount === 'By Amount'">
-    <div class="dashboard-block b-bdr" *ngFor=" let data2 of Data2">
+    <div class="dashboard-block b-bdr" *ngFor=" let data2 of Data2 ">
         <div class="portfolio-box">
             <div class="portfolio-icon">
                 <img src={{data2.image}} class="img-width">

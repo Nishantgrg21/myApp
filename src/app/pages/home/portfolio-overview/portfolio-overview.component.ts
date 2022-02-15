@@ -13,6 +13,7 @@ import pdata2 from '../portfolio-overview/data2.json';
 import { ViewEncapsulation } from '@angular/core';
 import { MatOption } from '@angular/material/core';
 import { MatSelect } from '@angular/material/select';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Component({
   selector: 'app-portfolio-overview',
@@ -81,21 +82,25 @@ import { MatSelect } from '@angular/material/select';
 
 export class PortfolioOverviewComponent implements OnInit {
   accountToAmount: any = 'By Account';
-  public Data1: {
+   Data1: {
     image: string;
     title: string;
     amount: string;
     percent: string;
-  }[] = pdata1;
-  public Data2: {
-    image: string;
-    title: string;
-    amount: string;
-    percent: string;
+  }[] = pdata1 ;
+
+  Data2 : {
+    image: string,
+    title: string,
+    amount: string,
+    percent: string,
   }[] = pdata2;
   checkedData: any;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    
+  
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(ExportMasterReportDialog, {
@@ -120,97 +125,63 @@ export class PortfolioOverviewComponent implements OnInit {
     this.animateState2 = 'final';
   }
 
-  dropdownData: any = ['Bucket 1', 'Bucket 2', 'Bucket 3', 'Bucket 4'];
-
-  dropdownContent: any;
-  dropdownCheckboxContent: any;
-  checkboxContent: any;
-  checkboxButton: any;
+  
+  
+  dropdownContent!: boolean;
+  dropdownContent2!:boolean;
+   checkboxButton!: boolean;
   ngOnInit(): void {
     this.dropdownContent = true;
-    this.dropdownCheckboxContent = true;
-    this.checkboxContent = true;
-    this.checkboxButton = true;
-    this.setBucketListLoanData();
-    this.SelectedCheckedValue =new Array<string>();
-  }
-
-  SelectedValue: any = 'Bucket 3';
-  onChange1(data: any) {
-    this.SelectedValue = data;
-    // console.log(this.SelectedValue);
-  }
-
-  // Checkbox button
-  bucketList!: any[];
-  setBucketListLoanData() {
-    this.bucketList = [
-      { id: 1, value: 'Credit Card', submenu: [] },
-      {
-        value: 'Loan',
-        submenu: [
-          { id: 1, checked: true, submenuOption: 'Home Loan' },
-          { id: 2, checked: true, submenuOption: 'Loan Against Property' },
-          { id: 3, checked: true, submenuOption: 'Pay Day Loan' },
-          { id: 4, checked: true, submenuOption: 'Personal Loan' },
-          { id: 5, checked: true, submenuOption: 'Business Loan' },
-        ],
-      },
-    ];
-  }
-
-  // selection = [
-  //   {  submenuOption: 'Home Loan'},
-  //   {  submenuOption: 'Business Loan'},
-  // ];
-
-  // dropdownDataNew: any =[
-  //   // {value1:"Credit Card",
-  //   //  option:'Credit Card',
-  //   //   expand:false,
-  //   //  submenu:[]
-  //   // },
-  //   // {value2:"Loan",
-  //   //  option:'Credit Card',
-  //   //   expand:false,
-  //   //   submenu: [
-  //   //   {check: true, submenuOption: 'Home Loan'},
-  //   //   {check: true, submenuOption: 'Loan Against Property'},
-  //   //   {check: true, submenuOption: 'Pay Day Loan'},
-  //   //   {check: true, submenuOption: 'Personal Loan'},
-  //   //   {check: true, submenuOption: 'Business Loan'},
-  //   //   ]}
-  // ]
-
-  NewSelectedValue: any = 'Credit Card';
-  onChange2(data: any) {
-    this.NewSelectedValue = data.value;
+    this.dropdownContent2 = true;
+    
+    this.SelectedChecked   = new Array<string>("Live");
   }
 
 
+  dropdownData = ['Bucket 1', 'Bucket 2', 'Bucket 3', 'Bucket 4']
+  SelectedData = 'Bucket 3';
+  onChange(data: string) {
+    this.SelectedData = data;
+  }
 
-  checkedValue = [
-    { id:1,name: 'Live', isselected: false },
+  
+  dropdownData2 = [ "March'21", "May' 21", "April' 21" ]
+  SelectedData2 = "March'21";
+  onChange2(data: string) {
+    this.SelectedData2 = data;
+  }
+  
+
+
+// Checkbox Button Start
+  CheckedList = [
+    { id:1,name: 'Live', isselected: true },
     {id:2, name: 'Pre-NPA', isselected: false }, 
     {id:3, name: 'NPA', isselected: false },
   ];
 
-  SelectedCheckedValue: any = 'Live';
 
-  onCheck(event: any,name:any){
-    if (event.target.checked == true) {
-      console.log(name + 'checked');
-       this.SelectedCheckedValue.push(name);
-       this.SelectedCheckedValue= this.SelectedCheckedValue.filter((m: any)=>m=name);
-        }
-        else{
-          console.log(name + 'unchecked');
-           this.SelectedCheckedValue= this.SelectedCheckedValue.filter((m: any)=>m!=name);
-        }
-   console.log(this.SelectedCheckedValue);
+  SelectedChecked :any="Live";
+  onCheck(event:any,name:string){
+    if(event.target.checked== true){
+      
+      console.log(name + "checked");
+      this.SelectedChecked.push(name);
+      this.SelectedChecked = this.SelectedChecked.filter((m: any)=>m=name);
+    }
+    else {
+      console.log(name + "unchecked");
+      this.SelectedChecked = this.SelectedChecked.filter((m: any)=>m!=name);
+    }
+   
+
+
+    
+    console.log( this.SelectedChecked);
   }
 
-
+  
+  
 
 
 
@@ -238,3 +209,7 @@ export class ExportMasterReportDialog {
     this.dialogRef.close();
   }
 }
+function e(e: any) {
+  throw new Error('Function not implemented.');
+}
+
