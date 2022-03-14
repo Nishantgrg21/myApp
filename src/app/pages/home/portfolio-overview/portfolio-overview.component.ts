@@ -127,13 +127,13 @@ export class PortfolioOverviewComponent implements OnInit {
 
   
   
-  dropdownContent!: boolean;
-  dropdownContent2!:boolean;
-   checkboxButton!: boolean;
+  dropdownContent: boolean = true;
+  dropdownContent2:boolean = true;
+  checkboxButton: boolean = true;
+
   ngOnInit(): void {
     this.dropdownContent = true;
     this.dropdownContent2 = true;
-    
     this.SelectedChecked   = new Array<string>("Live");
   }
 
@@ -161,17 +161,18 @@ export class PortfolioOverviewComponent implements OnInit {
   ];
 
 
-  SelectedChecked :any="Live";
-  onCheck(event:any,name:string){
+  SelectedChecked :any= "Live";
+  onChange1(event: any,name:string){
     if(event.target.checked== true){
       
-      console.log(name + "checked");
-      this.SelectedChecked.push(name);
-      this.SelectedChecked = this.SelectedChecked.filter((m: any)=>m=name);
+      //console.log(name + "checked");
+      
+       this.SelectedChecked.push(name);
+       this.SelectedChecked = this.SelectedChecked.filter((m: any)=>m=name);
     }
     else {
-      console.log(name + "unchecked");
-      this.SelectedChecked = this.SelectedChecked.filter((m: any)=>m!=name);
+     // console.log(name + "unchecked");
+       this.SelectedChecked = this.SelectedChecked.filter((m: any)=>m!=name);
     }
    
 

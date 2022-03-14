@@ -84,6 +84,7 @@
   .d-flex1 {
     display: flex !important;
     align-items: center !important;
+    color:#fff
   }
   .hr-line {
     border-bottom: 1px solid #1e1e1e !important;

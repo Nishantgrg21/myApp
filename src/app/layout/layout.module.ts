@@ -57,6 +57,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from '../auth/auth.module';
+
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -118,6 +120,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatChipsModule,
     MatCommonModule,
     MatDatepickerModule,
+    AuthModule
   ],
   exports:[
     LayoutComponent

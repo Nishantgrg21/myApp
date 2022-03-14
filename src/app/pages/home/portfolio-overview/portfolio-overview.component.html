@@ -41,10 +41,10 @@
             <span class="material-icons rounded-icon"> expand_more </span>
              <ul class="dropdownContentchkbox" *ngIf="!checkboxButton" >
                 <li class="dropdown-itemchkbox cb-item" *ngFor="let mydata of CheckedList"
-                    [value]="checkedData" [class.dropdown-item-bg]="mydata===SelectedChecked">
+                    [value]="checkedData" [class.dropdown-item-bg]="mydata==SelectedChecked">
 
                     <label class="form-check-label curser cb_container">
-                        <input type="checkbox" class="form-check-input curser" (change)="onCheck($event,mydata.name)" [(ngModel)]="mydata.isselected"
+                        <input type="checkbox" class="form-check-input curser" (change)="onChange1($event,mydata.name)" [(ngModel)]="mydata.isselected"
                     [checked]="mydata.isselected" name="mydata.name"  id="mydata.name" value="mydata.name">
                     <span class="checkmark"> </span>   
                     {{mydata.name}}

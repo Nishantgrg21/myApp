@@ -7,6 +7,8 @@ import { ShareModule } from './shared/share.module';
 import { LayoutModule } from './layout/layout.module';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,8 +19,8 @@ import { LayoutModule } from './layout/layout.module';
     BrowserAnimationsModule,
     ShareModule,  
     LayoutModule, 
-   
-   
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
