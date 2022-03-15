@@ -1,1 +1,64 @@
-<p>register works!</p>
+<div class="top" [@myAnimation1]>
+    <div class="header">
+        <img src="../../../../assets/etharaLogo.png" alt="logo">
+        <img src="../../../../assets/info-icon.png" alt="info-logo" style="width: 44px;">
+    </div>
+</div>
+<div class="bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="imag">
+                    <img src="../../../../assets/Group.png" alt="laptop img" height="380px">
+                </div>
+                <div class="discription" [@myAnimation2]>
+                    <h1>The Next-Gen in</h1>
+                    <h1>Digital Debt Collection</h1>
+
+                </div>
+                <div class="discription" [@myAnimation2]>
+                    <p class="mt-50"> Introducing Ethera </p>
+                    <p class="clrchange">India's first and only end-to-end </p>
+                    <p class="clrchange"> debt management platform</p>
+                    <p> for accuracy, ease and insights.</p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="block" [@myAnimation2]>
+                    <h1>Hello,</h1>
+                    <p>Register to your account.</p>
+                    <div class="myFormstyle" >
+                        <form class="example-container"  #myForm ="ngForm" (ngSubmit)="addUser(myForm.value)">
+                            <mat-form-field class="form-style">
+                                <mat-label>Enter your First Name</mat-label>
+                                <input matInput name="first_name" id="first_name" placeholder="First Name" ngModel>
+                            </mat-form-field>
+                            <mat-form-field class="form-style">
+                                <mat-label>Enter your Last Name</mat-label>
+                                <input matInput  name="last_name" id="last_name" placeholder="Last Name" ngModel>
+                            </mat-form-field>
+                            <mat-form-field class="form-style">
+                                <mat-label>Enter your email</mat-label>
+                                <input matInput name="email" id="email" placeholder="Email" ngModel>
+                            </mat-form-field>
+                            <!-- <mat-form-field class="form-style">
+                                <mat-label>Enter your Phone Number</mat-label>
+                                <input matInput  required>
+                            </mat-form-field>  -->
+                            <div class="mybutton">
+                                <button type="submit" name="submit">Register
+                                    <img src="../../../../assets/arrow.png" alt="btn">
+                                </button>
+                                <span routerLink="/login" class="color1 cursorPointer">Login</span>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

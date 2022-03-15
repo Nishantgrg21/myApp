@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './shared/share.module';
 import { LayoutModule } from './layout/layout.module';
+import { AuthModule } from './auth/auth.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -19,9 +22,10 @@ import { LayoutModule } from './layout/layout.module';
     BrowserAnimationsModule,
     ShareModule,  
     LayoutModule, 
-    
+    AuthModule,MatFormFieldModule
     
   ],
+  exports:[ MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
